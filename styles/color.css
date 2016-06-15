@@ -1,0 +1,75 @@
+body {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+a:link{
+	color: #FFFFFF;
+	background-color: #778899;
+}
+a:visited{
+	color: #FFFFFF;
+	background-color: #9999FF;
+}
+a:hover{
+	color: #778899;
+	background-color: #FFFFFF;
+}
+a:active{
+	color: #778899;
+	background-color: #778899;
+}
+header{
+	color: #778899;
+	background-color: #FFFFFF;
+	border-color: #FFFFFF;
+}
+header nav{
+	color: #778899;
+	background-color: #778899;
+	border-color: #778899;
+}
+article{
+	color: #373f49;
+	background-color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+header nav ul{
+	border-color: #FFFFFF;
+}
+header nav a:link,header nav a:visited{
+	color: #FFFFFF;
+	background-color: transparent;
+	border-color: #C5CCD3;
+}
+header nav a:hover{
+	color: #778899;
+	background-color: #FFFFFF;
+}
+header nav a:active{
+	color: #FFFFFF;
+	background-color: #D3D9DE;
+}
+article img{
+	border-color: #778899;
+	outline-color: #778899;
+}
+#imagegallery a{
+	background-color: transparent;
+}
+
+header nav a.here:link,
+header nav a.here:visited,
+header nav a.here:hover,
+header nav a.here:active {
+  color: #FFFFFF;
+  background-color: #586674;
+}
+
+tr.odd td{
+	color: #223;
+	background-color: #ec8;
+}
+tr.highlight td{
+	color: #223;
+	background-color: #cba;
+}
