@@ -6,4 +6,4 @@ A website about brand of nail polish. Include javascript, html and CSS.
 4. I used javascript to write this website. It shows some dynamic results: page hightlighting, slideshow,
    showing different parts of navigation, show different picture, defecting default values and so on.
 5. I will keep updating... Coming soon...
-l
+
