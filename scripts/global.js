@@ -66,7 +66,7 @@ function slideElement(elementID,final_x,final_y,interval) {
   if (!elem.style.top) {
     elem.style.top = "0px";
   }
-  var xpos = parseInt(elem.style.left);
+  var xpos = parseInt(elem.style.left); //create slide effect
   var ypos = parseInt(elem.style.top);
   if (xpos == final_x && ypos == final_y) {
     return true;
@@ -364,75 +364,6 @@ function prepareForms() {
   }
 }
 
-
-// Ajax
-
-function getHTTPObject() {
-  if (typeof XMLHttpRequest == "undefined")
-    XMLHttpRequest = function () {
-      try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); }
-        catch (e) {}
-      try { return new ActiveXObject("Msxml2.XMLHTTP.3.0"); }
-        catch (e) {}
-      try { return new ActiveXObject("Msxml2.XMLHTTP"); }
-        catch (e) {}
-      return false;
-  }
-  return new XMLHttpRequest();
-}
-
-function displayAjaxLoading(element) {
-    // Remove the existing content.
-  while (element.hasChildNodes()) {
-      element.removeChild(element.lastChild);
-  }
-  //  Create a loading image.
-  var content = document.createElement("img");
-  content.setAttribute("src","images/loading.gif");
-  content.setAttribute("alt","Loading...");
-  // Append the loading element.
-  element.appendChild(content);
-}
-
-function submitFormWithAjax( whichform, thetarget ) {
-  
-  var request = getHTTPObject();
-  if (!request) { return false; }
-
-  // Display a loading message.
-  displayAjaxLoading(thetarget);
-
-  // Collect the data.
-  var dataParts = [];
-  var element;
-  for (var i=0; i<whichform.elements.length; i++) {
-    element = whichform.elements[i];
-    dataParts[i] = element.name + '=' + encodeURIComponent(element.value);
-  }
-  var data = dataParts.join('&');
-
-  request.open('POST', whichform.getAttribute("action"), true);
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-  request.onreadystatechange = function () {
-    if (request.readyState == 4) {
-        if (request.status == 200 || request.status == 0) {
-          var matches = request.responseText.match(/<article>([\s\S]+)<\/article>/);
-          if (matches.length > 0) {
-            thetarget.innerHTML = matches[1];
-          } else {
-            thetarget.innerHTML = '<p>Oops, there was an error. Sorry.</p>';
-          }
-        } else {
-          thetarget.innerHTML = '<p>' + request.statusText + '</p>';
-        }
-    }
-  };
-
-  request.send(data);
-   
-  return true;
-};
 
 
 
